@@ -9,7 +9,7 @@ export function userLogin() {
     mutationFn: ({ email, password }) => loginApi({ email, password }),
     onSuccess: () => {
       queryClient.setQueriesData(["user"], user);
-      navigate("/dashboard");
+      navigate("/dashboard", { replace: true });
     },
     onError: (error) => {
       console.log("ERROR", error);
