@@ -10,6 +10,7 @@ import { useRecentBookings } from "./useRecentBookings";
 import { useRecentStays } from "./useRecentStays";
 import Stats from "./Stats";
 import { useCabins } from "../../features/cabins/useCabins";
+import SalesChart from "./SalesChart";
 export default function DashboardLayout() {
   const { isLoading: isLoading1, bookings } = useRecentBookings();
   const {
@@ -32,7 +33,7 @@ export default function DashboardLayout() {
       />
       <div>Today's activity</div>
       <div>Chart stay durations</div>
-      <div>Chart of sales</div>
+      <SalesChart bookings={bookings} numDays={numDays} />
     </StyledDashboardLayout>
   );
 }
